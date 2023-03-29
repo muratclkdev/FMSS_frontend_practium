@@ -2,15 +2,15 @@ import axios from 'axios';
 
 const getData = async (userId) =>  {
   try {
-    const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    const postsResponse = await axios (`https://jsonplaceholder.typicode.com/posts?id=${userId}`);
+    const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`); //sends request to endpoint
+    const postsResponse = await axios (`https://jsonplaceholder.typicode.com/posts?id=${userId}`); //sends request to endpoint
 
-    const getData = userResponse.data;
-    const getPosts = postsResponse.data;
+    const getData = userResponse.data; //only fetch data
+    const getPosts = postsResponse.data; // only fetch data
 
-    return { ...getData, posts: getPosts };
+    return { ...getData, posts: getPosts }; //merge datas and return function
   } catch (error) {
-    console.error(error);
+    console.error(error); //throws an error
   }
 }
 
