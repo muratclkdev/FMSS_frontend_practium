@@ -3,7 +3,7 @@ import axios from 'axios';
 const getData = async (userId) =>  {
   try {
     const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    const postsResponse = await axios (`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+    const postsResponse = await axios (`https://jsonplaceholder.typicode.com/posts?id=${userId}`);
 
     const getData = userResponse.data;
     const getPosts = postsResponse.data;
