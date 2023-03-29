@@ -8,7 +8,7 @@ const getData = async (userId) =>  {
     const getData = userResponse.data; //only fetch data
     const getPosts = postsResponse.data; // only fetch data
 
-    return { ...getData, posts: getPosts }; //merge datas and return function
+    return { ...getData, posts: getPosts }; //merge data then return function
   } catch (error) {
     console.error(error); //throws an error
   }
